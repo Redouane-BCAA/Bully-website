@@ -67,6 +67,7 @@ h4 {
 }
 section {
   padding: 0 50px;
+  overflow: hidden;
 }
 .btn-link {
   padding: 10px 25px;
@@ -142,7 +143,7 @@ header {
   content: "\2715";
   transform: rotate(0deg);
 }
-
+/********** SECTION PRESENTATION **********/
 .presentation {
   background: var(--background-purple) url(images/bg-motif-1.svg) no-repeat
     center center/cover;
@@ -239,23 +240,145 @@ header {
   rotate: -100deg;
   z-index: 0;
 }
+/*********SECTION BULLYNOMICS*/
+#bullynomics {
+  background-color: var(--background-purple);
+}
+.bullynomics {
+  background: var(--background-green) url(images/bullynomics-bg.svg) no-repeat
+    center center/cover;
+}
+.bullynomics-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 116px 0;
+  z-index: 2;
+}
+.bullynomics-content h2 {
+  text-transform: none;
+  color: var(--background-purple);
+  -webkit-text-stroke: 4px black;
+  font-size: 102px;
+  letter-spacing: -5px;
+  margin-bottom: 100px;
+}
+.bullynomics-box-container {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.bullynomics-box {
+  box-shadow: 0px 5px 0px rgba(0,0,0,1);
+  text-align: center;
+  background-color: var(--background-purple);
+  border-radius: 40px;
+  border: 6px solid #000;
+  padding: 50px 30px;
+  width: 280px;
+}
+.bullynomics-box-container .bullynomics-box:first-child {
+  rotate: -20deg;
+}
+.bullynomics-box-container .bullynomics-box:nth-child(2) {
+  margin-bottom: 60px;
+}
+.bullynomics-box-container .bullynomics-box:last-child {
+  rotate: 20deg;
+}
+.bullynomics-box h3 {
+  color: var(--background-green);
+  font-size: 70px;
+  letter-spacing: -2px;
+  -webkit-text-stroke: 5px black;
+  margin-bottom: 50px;
+}
+.bullynomics-box p {
+  font-size: var(--link-font);
+  color: var(--background-green);
+  font-size: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/*******SECTION MAKE IT*/
+#make-it {
+  background-color: var(--background-purple);
+}
+.make-it{
+  background: var(--background-green);
+  position: relative;
+}
+.make-it::before {
+  content: "";
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: 740px;
+  height: 740px;
+  bottom: -8%;
+  left: -7%;
+  background: url(images/bully-2.webp) no-repeat center center/cover;
+  z-index: 1;
+}
+.make-it-container{
+  display: grid;
+  place-items: end;
+}
+.make-it-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 116px 0;
+  z-index: 2;
+  width: 45%;
 
+}
+.make-it-content h2 {
+  text-transform: none;
+  color: var(--background-purple);
+  -webkit-text-stroke: 4px black;
+  font-size: 90px;
+  letter-spacing: -5px;
+  line-height: 95%;
+  margin-bottom: 30px;
+  text-shadow: 0px 5px 0px rgba(0,0,0,1);
+}
+.make-it-content p{
+   width: 90%;
+}
+.line-svg{
+  width: 290px;
+  padding: 35px 0 0 24px;
+}
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
-  .presentation::before{
+  .presentation::before {
     width: 640px;
     height: 640px;
   }
   .presentation-content {
     padding: 0px 0px 50px 0px;
   }
-  #svg-container{
+  #svg-container {
     display: none;
+  }
+  /* SECTION BULLYNOMICS */
+  .bullynomics-box-container .bullynomics-box:nth-child(2) {
+    margin-bottom: 0px;
+    rotate: 20deg;
+  }
+  .bullynomics-box-container .bullynomics-box:last-child{
+    rotate: 0deg;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 768px) {
   /* HEADER NAVBAR MEDIA QUERIES */
-  header{
+  header {
     padding: 20px 10px;
   }
   .menu ul {
@@ -268,6 +391,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     padding: 30px 0;
+    z-index: 1000;
   }
 
   .menu ul.show {
@@ -282,34 +406,34 @@ header {
   .burger-menu.cross {
     transform: rotate(90deg);
   }
-/* SECTION PRESENTATION */
-section{
-  padding: 0px 10px;
-}
-  .presentation-container{
+  /* SECTION PRESENTATION */
+  section {
+    padding: 0px 10px;
+  }
+  .presentation-container {
     height: calc(100svh + 50px);
   }
   .presentation-title {
     line-height: 45px;
   }
-  .presentation-title h1{
+  .presentation-title h1 {
     font-size: 40px;
   }
-  .presentation-title h2{
+  .presentation-title h2 {
     font-size: 70px;
   }
-  .presentation-title h3{
+  .presentation-title h3 {
     font-size: 30px;
   }
-  .presentation-txt{
+  .presentation-txt {
     width: 100%;
     font-size: 17px;
   }
-  .btn-container{
+  .btn-container {
     flex-direction: column;
     text-align: center;
   }
-  .btn-link{
+  .btn-link {
     width: 100%;
     padding: 10px 0;
   }
@@ -318,8 +442,41 @@ section{
     height: 400px;
     max-width: 100%;
     max-height: 100%;
-    bottom: -3%;
+    bottom: -4%;
     right: 50%;
     transform: translate(50%);
-}
+  }
+  /* section bullynomics */
+  .bullynomics-box-container .bullynomics-box:first-child {
+    margin-bottom: 0px;
+    rotate: 0deg;
+  }
+  .bullynomics-box-container .bullynomics-box:nth-child(2) {
+    margin-bottom: 0px;
+    rotate: 0deg;
+  }
+  .bullynomics-box-container .bullynomics-box:last-child{
+    rotate: 0deg;
+    margin-bottom: 30px;
+  }
+  .bullynomics-box-container {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  .bullynomics-box {
+    width: 100%;
+    padding: 20px 30px;
+  }
+  .bullynomics-content .btn-container {
+    width: 100%;
+  }
+  .bullynomics-content h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    letter-spacing: -3px;
+  }
+  .bullynomics-content {
+    padding: 30px 0;
+  }
 }
