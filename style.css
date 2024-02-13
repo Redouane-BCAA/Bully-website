@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap");
+/********** BASE CSS **********/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/********** VARIABLES CSS **********/
+:root {
+  /* Color */
+  --background-green: #b2febd;
+  --background-purple: #7e4af4;
+  --text-dark: #000;
+  --text-white: #fff;
+
+  /* Font and typography */
+  --body-font: "Josefin Sans";
+  --title-font: "Titan One", sans-serif;
+  --link-font: "Grandstander", cursive;
+  --normal-font-size: 22px;
+
+  /* Font weight */
+  --font-bold: 700;
+}
+
+/* Responsive typo for min 964px screen  */
+body {
+  scroll-behavior: smooth;
+  position: relative;
+  line-height: 1;
+  background-color: var(--background-green);
+  font-family: var(--body-font);
+  color: var(--text-dark);
+  font-size: var(--normal-font-size);
+  background-size: cover;
+  line-height: 30px;
+  overflow: scroll;
+}
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--link-font);
+  color: var(--text-dark);
+}
+ol,
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--title-font);
+  font-weight: 400;
+}
+
+.ctn {
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  border: 5px solid black;
+}
+section {
+  padding: 0 50px;
+}
+.btn-link {
+  padding: 10px 25px;
+  font-weight: var(--font-bold);
+  transition: all 0.3s ease;
+  border: 6px solid #000;
+  text-align: center;
+}
+.btn-link:hover {
+  background-color: #000;
+  color: #fff;
+  scale: 1.1;
+}
+.bg-blue {
+  background-color: #09d3ff;
+}
+.bg-rose {
+  background-color: #eab2fe;
+}
+.bg-salmon {
+  background-color: #fec0b2;
+}
+/************* HEADER ***********/
+header {
+  display: grid;
+  place-items: center;
+  padding: 20px 70px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  font-weight: var(--font-bold);
+  transition: all 0.3s ease;
+}
+
+.menu ul li a {
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: var(--background-purple);
+}
+
+/* Burger BTN */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.burger-menu:before {
+  content: "\2630";
+  font-size: 30px;
+  transition: transform 0.3s ease;
+}
+
+.burger-menu.cross:before {
+  content: "\2715";
+  transform: rotate(0deg);
+}
+
+.presentation {
+  background: var(--background-purple) url(images/bg-motif-1.svg) no-repeat
+    center center/cover;
+  background-color: var(--background-purple);
+  border-radius: 40px 40px 0 0;
+  position: relative;
+}
+.presentation::before {
+  content: "";
+  position: absolute;
+  width: 740px;
+  height: 740px;
+  bottom: -8%;
+  right: -10%;
+  background: url(images/bully-1.webp) no-repeat center center/cover;
+  z-index: 1;
+  border-radius: 40px 40px 0 0;
+}
+.presentation-container {
+  display: flex;
+  gap: 20px;
+}
+.presentation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 125px 0 70px 125px;
+  z-index: 2;
+}
+.presentation-title {
+  color: #b2febd;
+  -webkit-text-stroke: 3px black;
+  line-height: 80px;
+}
+.presentation-title h1 {
+  letter-spacing: -3px;
+  font-size: 60px;
+}
+.presentation-title h2 {
+  letter-spacing: -5px;
+  font-size: 120px;
+}
+.presentation-title h3 {
+  font-size: 30px;
+  letter-spacing: -2px;
+  -webkit-text-stroke: 2px black;
+}
+.presentation-txt {
+  color: var(--text-white);
+  width: 43%;
+}
+.btn-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.presentation-bully {
+  max-width: 100%; /* Limite la largeur maximale à 100% de la largeur de l'écran */
+  max-height: 100%;
+  width: 50%;
+  position: absolute;
+  bottom: -3%;
+  right: -1%;
+  z-index: 10;
+}
+#svg-container img:first-child {
+  position: absolute;
+  top: -7%;
+  left: 15%;
+  z-index: 1;
+  scale: 0.8;
+}
+#svg-container img:nth-child(2) {
+  position: absolute;
+  top: 5%;
+  right: 30%;
+  scale: 0.5;
+  rotate: -40deg;
+  z-index: 1;
+}
+#svg-container img:nth-child(3) {
+  position: absolute;
+  bottom: 5%;
+  right: 34%;
+  scale: 0.8;
+  rotate: 40deg;
+  z-index: 0;
+}
+#svg-container img:nth-child(4) {
+  position: absolute;
+  bottom: 3%;
+  left: 0%;
+  scale: 0.6;
+  rotate: -100deg;
+  z-index: 0;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+  .presentation::before{
+    width: 640px;
+    height: 640px;
+  }
+  .presentation-content {
+    padding: 0px 0px 50px 0px;
+  }
+  #svg-container{
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* HEADER NAVBAR MEDIA QUERIES */
+  header{
+    padding: 20px 10px;
+  }
+  .menu ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: -768px;
+    width: 100%;
+    background-color: var(--background-green);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 30px 0;
+  }
+
+  .menu ul.show {
+    left: 0;
+  }
+
+  .burger-menu {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .burger-menu.cross {
+    transform: rotate(90deg);
+  }
+/* SECTION PRESENTATION */
+section{
+  padding: 0px 10px;
+}
+  .presentation-container{
+    height: calc(100svh + 50px);
+  }
+  .presentation-title {
+    line-height: 45px;
+  }
+  .presentation-title h1{
+    font-size: 40px;
+  }
+  .presentation-title h2{
+    font-size: 70px;
+  }
+  .presentation-title h3{
+    font-size: 30px;
+  }
+  .presentation-txt{
+    width: 100%;
+    font-size: 17px;
+  }
+  .btn-container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .btn-link{
+    width: 100%;
+    padding: 10px 0;
+  }
+  .presentation::before {
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: -3%;
+    right: 50%;
+    transform: translate(50%);
+}
+}
