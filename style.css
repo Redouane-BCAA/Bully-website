@@ -495,7 +495,7 @@ footer img {
   }
   .presentation-container,
   .join-us-container {
-    height: calc(100svh + 100px);
+    height: calc(100svh + 200px);
   }
   .presentation-title {
     line-height: 45px;
@@ -591,7 +591,7 @@ footer img {
     width: 100%;
   }
   .make-it-container {
-    height: calc(100svh + 100px);
+    height: calc(100svh + 200px);
     display: flex;
     align-items: baseline;
   }
