@@ -56,6 +56,7 @@ h3,
 h4 {
   font-family: var(--title-font);
   font-weight: 400;
+  text-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
 }
 
 .ctn {
@@ -67,7 +68,6 @@ h4 {
 }
 section {
   padding: 0 50px;
-  overflow: hidden;
 }
 .btn-link {
   padding: 10px 25px;
@@ -143,7 +143,7 @@ header {
   content: "\2715";
   transform: rotate(0deg);
 }
-/********** SECTION PRESENTATION **********/
+/********** SECTION PRESENTATION & JOIN US **********/
 .presentation {
   background: var(--background-purple) url(images/bg-motif-1.svg) no-repeat
     center center/cover;
@@ -151,29 +151,54 @@ header {
   border-radius: 40px 40px 0 0;
   position: relative;
 }
+.join-us {
+  background: var(--background-purple) url(images/bg-join-us.svg) no-repeat
+    center center/cover;
+  background-color: var(--background-purple);
+  border-radius: 0 0 40px 40px;
+  position: relative;
+}
 .presentation::before {
   content: "";
   position: absolute;
-  width: 740px;
+  max-width: 100%;
+  max-height: 100%;
+  width: 680px;
   height: 740px;
-  bottom: -8%;
-  right: -10%;
+  bottom: -8.5%;
+  right: -5%;
   background: url(images/bully-1.webp) no-repeat center center/cover;
   z-index: 1;
   border-radius: 40px 40px 0 0;
 }
-.presentation-container {
+.join-us::before {
+  content: "";
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: 740px;
+  height: 740px;
+  bottom: 0%;
+  right: -0%;
+  background: url(images/bully-3.webp) no-repeat center center/cover;
+  z-index: 1;
+  border-radius: 40px 40px 0 0;
+}
+.presentation-container,
+.join-us-container {
   display: flex;
   gap: 20px;
 }
-.presentation-content {
+.presentation-content,
+.join-us-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 125px 0 70px 125px;
   z-index: 2;
 }
-.presentation-title {
+.presentation-title,
+.join-us-title {
   color: #b2febd;
   -webkit-text-stroke: 3px black;
   line-height: 80px;
@@ -186,12 +211,17 @@ header {
   letter-spacing: -5px;
   font-size: 120px;
 }
+.join-us-title h2 {
+  font-size: 90px;
+  letter-spacing: -5px;
+}
 .presentation-title h3 {
   font-size: 30px;
   letter-spacing: -2px;
   -webkit-text-stroke: 2px black;
 }
-.presentation-txt {
+.presentation-txt,
+.join-us-txt {
   color: var(--text-white);
   width: 43%;
 }
@@ -272,7 +302,7 @@ header {
   flex-wrap: wrap;
 }
 .bullynomics-box {
-  box-shadow: 0px 5px 0px rgba(0,0,0,1);
+  box-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
   text-align: center;
   background-color: var(--background-purple);
   border-radius: 40px;
@@ -307,8 +337,9 @@ header {
 /*******SECTION MAKE IT*/
 #make-it {
   background-color: var(--background-purple);
+  position: relative;
 }
-.make-it{
+.make-it {
   background: var(--background-green);
   position: relative;
 }
@@ -319,12 +350,12 @@ header {
   max-height: 100%;
   width: 740px;
   height: 740px;
-  bottom: -8%;
+  bottom: -6%;
   left: -7%;
   background: url(images/bully-2.webp) no-repeat center center/cover;
   z-index: 1;
 }
-.make-it-container{
+.make-it-container {
   display: grid;
   place-items: end;
 }
@@ -335,7 +366,6 @@ header {
   padding: 116px 0;
   z-index: 2;
   width: 45%;
-
 }
 .make-it-content h2 {
   text-transform: none;
@@ -345,25 +375,76 @@ header {
   letter-spacing: -5px;
   line-height: 95%;
   margin-bottom: 30px;
-  text-shadow: 0px 5px 0px rgba(0,0,0,1);
+  text-shadow: 0px 5px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 30px;
 }
-.make-it-content p{
-   width: 90%;
+.make-it-content p {
+  width: 90%;
 }
-.line-svg{
+.line-svg {
   width: 290px;
   padding: 35px 0 0 24px;
 }
+.circle-svg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: -10%;
+  left: -10%;
+  z-index: 1;
+  scale: 0.8;
+}
+/* SECTION JOIN US  */
+.join-us-btn {
+  min-width: 200px;
+}
+#join-us-svg-container img {
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  z-index: 1;
+}
+footer{
+  margin-top: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+footer img{
+  width: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+}
+.footer-links{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
-  .presentation::before {
+  .presentation::before,
+  .join-us::before {
     width: 640px;
     height: 640px;
+  }
+  .make-it::before {
+    width: 640px;
+    height: 640px;
+    bottom: -5%;
   }
   .presentation-content {
     padding: 0px 0px 50px 0px;
   }
-  #svg-container {
+  .join-us-content {
+    padding: 110px 0px 50px 0px;
+  }
+  #svg-container,
+  #join-us-svg-container {
     display: none;
   }
   /* SECTION BULLYNOMICS */
@@ -371,9 +452,14 @@ header {
     margin-bottom: 0px;
     rotate: 20deg;
   }
-  .bullynomics-box-container .bullynomics-box:last-child{
+  .bullynomics-box-container .bullynomics-box:last-child {
     rotate: 0deg;
     margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .circle-svg {
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {
@@ -406,12 +492,13 @@ header {
   .burger-menu.cross {
     transform: rotate(90deg);
   }
-  /* SECTION PRESENTATION */
+  /* SECTION PRESENTATION & JOIN US */
   section {
     padding: 0px 10px;
   }
-  .presentation-container {
-    height: calc(100svh + 50px);
+  .presentation-container,
+  .join-us-container {
+    height: calc(100svh + 100px);
   }
   .presentation-title {
     line-height: 45px;
@@ -419,21 +506,28 @@ header {
   .presentation-title h1 {
     font-size: 40px;
   }
-  .presentation-title h2 {
+  .presentation-title h2,
+  .join-us-title h2 {
     font-size: 70px;
   }
   .presentation-title h3 {
     font-size: 30px;
   }
-  .presentation-txt {
+  .presentation-txt,
+  .join-us-txt {
     width: 100%;
     font-size: 17px;
+  }
+  .join-us-content {
+    padding-top: 0;
   }
   .btn-container {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
   .btn-link {
+    max-width: 305px;
     width: 100%;
     padding: 10px 0;
   }
@@ -446,6 +540,15 @@ header {
     right: 50%;
     transform: translate(50%);
   }
+  .join-us,
+  .presentation,
+  .make-it,
+  .bullynomics {
+    overflow: hidden;
+  }
+  .join-us::before {
+    bottom: -5%;
+  }
   /* section bullynomics */
   .bullynomics-box-container .bullynomics-box:first-child {
     margin-bottom: 0px;
@@ -455,7 +558,7 @@ header {
     margin-bottom: 0px;
     rotate: 0deg;
   }
-  .bullynomics-box-container .bullynomics-box:last-child{
+  .bullynomics-box-container .bullynomics-box:last-child {
     rotate: 0deg;
     margin-bottom: 30px;
   }
@@ -478,5 +581,37 @@ header {
   }
   .bullynomics-content {
     padding: 30px 0;
+  }
+  /*******SECTION MAKE IT*********/
+  .make-it-content {
+    width: 100%;
+    padding: 30px 0;
+  }
+  .make-it-content h2 {
+    text-align: center;
+    font-size: 70px;
+  }
+  .make-it-content p {
+    width: 100%;
+  }
+  .make-it-container {
+    height: calc(100svh + 100px);
+    display: flex;
+    align-items: baseline;
+  }
+  .make-it::before {
+    width: 380px;
+    height: 380px;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: -4%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .line-svg {
+    width: 100%;
+  }
+  .circle-svg {
+    display: none;
   }
 }
