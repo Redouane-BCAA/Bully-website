@@ -79,7 +79,7 @@ section {
 .btn-link:hover {
   background-color: #000;
   color: #fff;
-  scale: 1.1;
+  transform: scale(1.1);
 }
 .bg-blue {
   background-color: #09d3ff;
@@ -244,30 +244,27 @@ header {
   top: -7%;
   left: 15%;
   z-index: 1;
-  scale: 0.8;
+  transform: scale(0.8);
 }
 #svg-container img:nth-child(2) {
   position: absolute;
   top: 5%;
   right: 30%;
-  scale: 0.5;
-  rotate: -40deg;
+  transform: scale(0.5) rotate(-40deg);
   z-index: 1;
 }
 #svg-container img:nth-child(3) {
   position: absolute;
   bottom: 5%;
   right: 34%;
-  scale: 0.8;
-  rotate: 40deg;
+  transform: scale(0.8) rotate(40deg);
   z-index: 0;
 }
 #svg-container img:nth-child(4) {
   position: absolute;
   bottom: 3%;
   left: 0%;
-  scale: 0.6;
-  rotate: -100deg;
+  transform: scale(0.6) rotate(-100deg);
   z-index: 0;
 }
 /*********SECTION BULLYNOMICS*/
@@ -311,13 +308,13 @@ header {
   width: 280px;
 }
 .bullynomics-box-container .bullynomics-box:first-child {
-  rotate: -20deg;
+  transform: rotate(-20deg);
 }
 .bullynomics-box-container .bullynomics-box:nth-child(2) {
   margin-bottom: 60px;
 }
 .bullynomics-box-container .bullynomics-box:last-child {
-  rotate: 20deg;
+  transform: rotate(20deg);
 }
 .bullynomics-box h3 {
   color: var(--background-green);
@@ -392,7 +389,7 @@ header {
   top: -10%;
   left: -10%;
   z-index: 1;
-  scale: 0.8;
+  transform: scale(0.8);
 }
 /* SECTION JOIN US  */
 .join-us-btn {
@@ -404,7 +401,7 @@ header {
   left: 30%;
   z-index: 1;
 }
-footer{
+footer {
   margin-top: 60px;
   margin-bottom: 30px;
   display: flex;
@@ -413,12 +410,12 @@ footer{
   align-items: center;
   gap: 30px;
 }
-footer img{
+footer img {
   width: 100%;
   max-width: 140px;
   margin: 0 auto;
 }
-.footer-links{
+.footer-links {
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -450,10 +447,10 @@ footer img{
   /* SECTION BULLYNOMICS */
   .bullynomics-box-container .bullynomics-box:nth-child(2) {
     margin-bottom: 0px;
-    rotate: 20deg;
+    transform: rotate(20deg);
   }
   .bullynomics-box-container .bullynomics-box:last-child {
-    rotate: 0deg;
+    transform: rotate(0deg);
     margin-bottom: 50px;
   }
 }
@@ -552,14 +549,14 @@ footer img{
   /* section bullynomics */
   .bullynomics-box-container .bullynomics-box:first-child {
     margin-bottom: 0px;
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
   .bullynomics-box-container .bullynomics-box:nth-child(2) {
     margin-bottom: 0px;
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
   .bullynomics-box-container .bullynomics-box:last-child {
-    rotate: 0deg;
+    transform: rotate(0deg);
     margin-bottom: 30px;
   }
   .bullynomics-box-container {
@@ -588,7 +585,6 @@ footer img{
     padding: 30px 0;
   }
   .make-it-content h2 {
-    text-align: center;
     font-size: 70px;
   }
   .make-it-content p {
